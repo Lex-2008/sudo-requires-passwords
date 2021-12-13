@@ -1,13 +1,15 @@
 {
   "name": "sudo requires password",
-  "type": "module-repo",
   "description": "Repo for the 'sudo requires password' module",
+  "type": "module-repo",
   "provides": {
     "sudo-requires-password": {
       "description": "Ensure that sudo requires password",
       "tags": ["security"],
       "dependencies": ["autorun"],
-      "steps": ["copy ./sudo-requires-password.cf services/autorun/sudo-requires-password.cf"]
+      "steps": [
+        "copy ./sudo-requires-password.cf services/autorun/sudo-requires-password.cf"
+      ]
     }
   }
 }
