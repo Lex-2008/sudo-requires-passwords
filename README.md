@@ -14,8 +14,8 @@ Security notice
 ---------------
 
 > While this module tries its best,
-> it can't guarantee a protection against
-> a malitious sysadmin.
+> it can't guarantee protection against
+> a malicious sysadmin.
 > They can always `chomd u+s` a copy of bash,
 > or replace `sudo` binary with their own copy,
 > or configure it to use a different security policy plugin,
