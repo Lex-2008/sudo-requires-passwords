@@ -1,13 +1,13 @@
 {
-  "name": "CFEngine Build module template repo",
+  "name": "sudo requires password",
   "type": "module-repo",
-  "description": "This repo only provides 1 module, and is a good starting point for making your own modules",
+  "description": "Repo for the 'sudo requires password' module",
   "provides": {
-    "my-module": {
-      "description": "This module has a policy file which reports a string to the terminal, and to the inventory system",
-      "tags": ["inventory"],
+    "sudo-requires-password": {
+      "description": "Ensure that sudo requires password",
+      "tags": ["security"],
       "dependencies": ["autorun"],
-      "steps": ["copy ./my_policy.cf services/autorun/my_policy.cf"]
+      "steps": ["copy ./sudo-requires-password.cf services/autorun/sudo-requires-password.cf"]
     }
   }
 }

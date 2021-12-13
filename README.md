@@ -1,17 +1,23 @@
-# CFEngine Build module template
+module to ensure that  sudo requires password
+=============================================
 
-You can use this template if you want to make your own modules.
-See this guide for an explanation:
+Ensures `/etc/sudoers` and `/etc/sudoers.d/*` files
+don't allow passwordless sudo:
 
-https://github.com/cfengine/build-index/blob/master/CONTRIBUTING.md
+* Removes `NOPASSWD:` entries
+  (changes them to `PASSWD:`)
 
-This module has a policy file which reports the following string:
+* Removes `exempt_group` setting
+  (comments it out)
 
-```
-Hello from CFEngine Build
-```
+Security notice
+---------------
 
-The string is printed to the terminal and sent to the reporting hub as inventory information (in CFEngine Enterprise).
+> While this module tries its best,
+> it can't guarantee a protection against
+> a malitious sysadmin.
+> They can always `chomd u+s` a copy of bash,
+> or replace `sudo` binary with their own copy,
+> or configure it to use a different security policy plugin,
+> or to look for config files in a different place.
 
-It is meant as an example / starting point.
-Edit `cfbs.json` and `my_policy.cf` to experiment.
